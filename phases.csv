@@ -1,0 +1,12 @@
+,id,name,num_winners,start_event,stop_event
+0,1,Overall,3,1,38
+1,2,August,10,1,3
+2,3,September,10,4,7
+3,4,October,10,8,10
+4,5,November,10,11,13
+5,6,December,10,14,20
+6,7,January,10,21,24
+7,8,February,10,25,28
+8,9,March,10,29,32
+9,10,April,10,33,36
+10,11,May,10,37,38

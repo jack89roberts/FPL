@@ -1,0 +1,35 @@
+,key,name
+0,total_points,Total score
+1,event_points,Round score
+2,now_cost,Price
+3,selected_by_percent,Teams selected by %
+4,minutes,Minutes played
+5,goals_scored,Goals scored
+6,assists,Assists
+7,clean_sheets,Clean sheets
+8,goals_conceded,Goals conceded
+9,own_goals,Own goals
+10,penalties_saved,Penalties saved
+11,penalties_missed,Penalties missed
+12,yellow_cards,Yellow cards
+13,red_cards,Red cards
+14,saves,Saves
+15,bonus,Bonus
+16,bps,Bonus Points System
+17,influence,Influence
+18,creativity,Creativity
+19,threat,Threat
+20,ict_index,ICT Index
+21,form,Form
+22,dreamteam_count,Times in Dream Team
+23,value_form,Value (form)
+24,value_season,Value (season)
+25,points_per_game,Points per match
+26,transfers_in,Transfers in
+27,transfers_out,Transfers out
+28,transfers_in_event,Transfers in (round)
+29,transfers_out_event,Transfers out (round)
+30,cost_change_start,Price rise
+31,cost_change_start_fall,Price fall
+32,cost_change_event,Price rise (round)
+33,cost_change_event_fall,Price fall (round)
