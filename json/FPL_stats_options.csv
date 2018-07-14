@@ -1,35 +1,35 @@
-,key,name
-0,total_points,Total score
-1,event_points,Round score
-2,now_cost,Price
-3,selected_by_percent,Teams selected by %
-4,minutes,Minutes played
-5,goals_scored,Goals scored
-6,assists,Assists
-7,clean_sheets,Clean sheets
-8,goals_conceded,Goals conceded
-9,own_goals,Own goals
-10,penalties_saved,Penalties saved
-11,penalties_missed,Penalties missed
-12,yellow_cards,Yellow cards
-13,red_cards,Red cards
-14,saves,Saves
-15,bonus,Bonus
-16,bps,Bonus Points System
-17,influence,Influence
-18,creativity,Creativity
-19,threat,Threat
-20,ict_index,ICT Index
-21,form,Form
-22,dreamteam_count,Times in Dream Team
-23,value_form,Value (form)
-24,value_season,Value (season)
-25,points_per_game,Points per match
-26,transfers_in,Transfers in
-27,transfers_out,Transfers out
-28,transfers_in_event,Transfers in (round)
-29,transfers_out_event,Transfers out (round)
-30,cost_change_start,Price rise
-31,cost_change_start_fall,Price fall
-32,cost_change_event,Price rise (round)
-33,cost_change_event_fall,Price fall (round)
+key,name
+total_points,Total score
+event_points,Round score
+now_cost,Price
+selected_by_percent,Teams selected by %
+minutes,Minutes played
+goals_scored,Goals scored
+assists,Assists
+clean_sheets,Clean sheets
+goals_conceded,Goals conceded
+own_goals,Own goals
+penalties_saved,Penalties saved
+penalties_missed,Penalties missed
+yellow_cards,Yellow cards
+red_cards,Red cards
+saves,Saves
+bonus,Bonus
+bps,Bonus Points System
+influence,Influence
+creativity,Creativity
+threat,Threat
+ict_index,ICT Index
+form,Form
+dreamteam_count,Times in Dream Team
+value_form,Value (form)
+value_season,Value (season)
+points_per_game,Points per match
+transfers_in,Transfers in
+transfers_out,Transfers out
+transfers_in_event,Transfers in (round)
+transfers_out_event,Transfers out (round)
+cost_change_start,Price rise
+cost_change_start_fall,Price fall
+cost_change_event,Price rise (round)
+cost_change_event_fall,Price fall (round)

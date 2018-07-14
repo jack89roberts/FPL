@@ -1,7 +1,7 @@
 #################
 ### VARIABLES ###
 #################
-update_api = True
+update_api = False
 fpl_file = 'json/fpl.json'
 fixtures_file = 'json/fixtures.json'
 token_file = 'api.token'
@@ -43,7 +43,7 @@ def json_to_df(raw_json,prefix='',suffix='.csv'):
         print(key+'...', end='')
         try:
             df = pd.DataFrame(raw_json[key])
-            df.to_csv(prefix + key + suffix)
+            df.to_csv(prefix + key + suffix, index=False)
             print('done.')
         except:
             print('ERROR!')
