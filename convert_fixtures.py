@@ -38,25 +38,33 @@ df.replace({'Manchester United FC':'Man Utd',
 teams = df['homeTeam'].unique()
 
 def opponent(row,team):
-    if row.Stadium=='Home':
-        return row.awayTeam
+    #if row.Stadium=='Home':
+    #    return row.awayTeam
+    #else:
+    #    return row.homeTeam
+    if row.homeTeam==team:
+        return (row.awayTeam,'Home')
     else:
-        return row.homeTeam
+        return (row.homeTeam,'Away')
 
 fixtures = {}
 for team in teams:
     df_team = df[(df.awayTeam==team)|(df.homeTeam==team)]
     
-    df_team['Stadium'] = df_team['homeTeam']==team
-    df_team['Stadium'] = df_team['Stadium'].replace({True:'Home',False:'Away'}).astype('category')
+    #df_team['Stadium'] = df_team['homeTeam']==team
+    #df_team['Stadium'] = df_team['Stadium'].replace({True:'Home',False:'Away'}).astype('category')
     
     df_team['Opponent'] = df_team.apply(opponent,axis=1,args=(team,))
     
     df_team.set_index('matchday',inplace=True,drop=True)
-    fixtures[team] = df_team[['Opponent','Stadium']]
+    #fixtures[team] = df_team[['Opponent','Stadium']]
+    fixtures[team] = df_team['Opponent']
+
+fixtures = pd.DataFrame(fixtures)
     
 ####################################
 # load fpl team info file
+'''
 difficulties = pd.read_csv('json/FPL_teams.csv')
 
 difficulties = difficulties[['name',
@@ -108,3 +116,4 @@ fixtures['Chelsea'].Diff_Attack.plot()
 fixtures['Chelsea'].Diff_Defence.plot()
 fixtures['Chelsea'].Diff_Overall.plot()
 plt.show()
+'''

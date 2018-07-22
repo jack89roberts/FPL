@@ -18,7 +18,31 @@ results['awayScore'] = [x['fullTime']['awayTeam'] for x in results['score']]
 results = results[['matchday','homeTeam','awayTeam',
                    'homeScore','awayScore','winner']]
 
+# change team names to FPL equivalents
+results.replace({'Manchester United FC':'Man Utd',
+                 'Newcastle United FC':'Newcastle',
+                 'West Bromwich Albion FC':'Fulham',#############!!!!!!!!!!!!!!!!!!#########
+                 'Huddersfield Town AFC':'Huddersfield',
+                 'Watford FC':'Watford',
+                 'AFC Bournemouth':'Bournemouth',
+                 'Stoke City FC':'Wolves',#############!!!!!!!!!!!!!!!!!!#########
+                 'Liverpool FC':'Liverpool',
+                 'Southampton FC':'Southampton',
+                 'Arsenal FC':'Arsenal',
+                 'Swansea City AFC':'Cardiff',#############!!!!!!!!!!!!!!!!!!#########
+                 'Tottenham Hotspur FC':'Spurs',
+                 'Everton FC':'Everton',
+                 'Leicester City FC':'Leicester',
+                 'Burnley FC':'Burnley',
+                 'West Ham United FC':'West Ham',
+                 'Chelsea FC':'Chelsea',
+                 'Manchester City FC':'Man City',
+                 'Brighton & Hove Albion FC':'Brighton',
+                 'Crystal Palace FC':'Crystal Palace'},
+                inplace=True)
+
 teams = results.homeTeam.unique()
+teams.sort()
 
 table = pd.DataFrame(0, index=teams,
                      columns=['Pld','W','D','L','GF','GA','GD','Pts',
@@ -57,4 +81,20 @@ table['GA'] = table['HGA']+table['AGA']
 table['GD'] = table['HGD']+table['AGD']
 table['Pts'] = table['HPts']+table['APts']
 
-print(table[['HPld','HW','HD','HL','HGF','HGA','HGD','HPts']].sort_values(by=['HPts','HGD','HGF'],ascending=False))
+table.sort_values(by=['Pts','GD','GF'],
+                  ascending=False,
+                  inplace=True)
+
+strengths = pd.DataFrame(index=teams,
+                         columns=['H_Att','H_Def','A_Att','A_Def'])
+
+strengths.index.name = 'Team'
+
+strengths['H_Att'] = table['HGF']/table['HPld']
+strengths['H_Def'] = table['HPld']/table['HGA']
+strengths['A_Att'] = table['AGF']/table['APld']
+strengths['A_Def'] = table['APld']/table['AGA']
+
+strengths.to_csv('processed/strengths.csv')
+
+print(strengths.sort_values(by='H_Att',ascending=False))
