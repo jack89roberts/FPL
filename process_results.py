@@ -85,6 +85,7 @@ table.sort_values(by=['Pts','GD','GF'],
                   ascending=False,
                   inplace=True)
 
+###
 strengths = pd.DataFrame(index=teams,
                          columns=['H_Att','H_Def','A_Att','A_Def'])
 
@@ -98,3 +99,14 @@ strengths['A_Def'] = table['APld']/table['AGA']
 strengths.to_csv('processed/strengths.csv')
 
 print(strengths.sort_values(by='H_Att',ascending=False))
+###
+
+goals = table[['HGF','HGA','AGF','AGA']].copy()/19
+
+avg_scored = goals[['HGF','AGF']].values.mean()
+goals = goals-avg_scored
+
+goals.to_csv('processed/goals.csv')
+
+
+print(goals)
