@@ -21,15 +21,15 @@ results = results[['matchday','homeTeam','awayTeam',
 # change team names to FPL equivalents
 results.replace({'Manchester United FC':'Man Utd',
                  'Newcastle United FC':'Newcastle',
-                 'West Bromwich Albion FC':'Fulham',#############!!!!!!!!!!!!!!!!!!#########
+                 'West Bromwich Albion FC':'West Brom',#############!!!!!!!!!!!!!!!!!!#########
                  'Huddersfield Town AFC':'Huddersfield',
                  'Watford FC':'Watford',
                  'AFC Bournemouth':'Bournemouth',
-                 'Stoke City FC':'Wolves',#############!!!!!!!!!!!!!!!!!!#########
+                 'Stoke City FC':'Stoke',#############!!!!!!!!!!!!!!!!!!#########
                  'Liverpool FC':'Liverpool',
                  'Southampton FC':'Southampton',
                  'Arsenal FC':'Arsenal',
-                 'Swansea City AFC':'Cardiff',#############!!!!!!!!!!!!!!!!!!#########
+                 'Swansea City AFC':'Swansea',#############!!!!!!!!!!!!!!!!!!#########
                  'Tottenham Hotspur FC':'Spurs',
                  'Everton FC':'Everton',
                  'Leicester City FC':'Leicester',
@@ -40,6 +40,8 @@ results.replace({'Manchester United FC':'Man Utd',
                  'Brighton & Hove Albion FC':'Brighton',
                  'Crystal Palace FC':'Crystal Palace'},
                 inplace=True)
+
+results.to_csv('processed/results.csv',index=False)
 
 teams = results.homeTeam.unique()
 teams.sort()
