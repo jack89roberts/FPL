@@ -1,3 +1,3 @@
-area,code,id,lastUpdated,name,plan
-2072,,2021,2018-06-04T23:52:26Z,Premier League,TIER_ONE
-England,,2021,2018-06-04T23:52:26Z,Premier League,TIER_ONE
+id,area,name,code,plan,lastUpdated
+2021,2072,Premier League,PL,TIER_ONE,2019-03-03T21:38:36Z
+2021,England,Premier League,PL,TIER_ONE,2019-03-03T21:38:36Z
